@@ -98,7 +98,7 @@ is a single axis (O0 vs optimized). The figure below illustrates the factorizati
 ### A loss bug, found adversarially, then fixed (`docs/loss_review.md`)
 
 The latent first collapsed to **~3–5 of 128 dimensions**, and adding more data did
-not help. A multi-agent adversarial review of the loss found the cause: the
+not help. The cause: the
 group-invariance term **summed** over feature dims while VICReg's anti-collapse
 terms **averaged**, hiding a factor of `D` that drowned out the rank-creating
 covariance term. Fixing the normalization (`sum→mean`, covariance `÷D`) — same data,
