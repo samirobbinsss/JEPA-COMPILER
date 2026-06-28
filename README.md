@@ -93,7 +93,7 @@ the honest ceiling: the gate showed the optimization signal is ~1-bit, so `z_spe
 is a single axis (O0 vs optimized). The figure below illustrates the factorization
 (2D PCA; `z_sem` looks diffuse precisely because it is high-rank):
 
-![PCA disentanglement](docs/figures/pca_disentangle.png)
+![PCA disentanglement](jepa-v2/docs/figures/pca_disentangle.png)
 
 ### A loss bug, found adversarially, then fixed (`docs/loss_review.md`)
 
@@ -115,7 +115,7 @@ that one *is* the data: a ~1-bit signal, per the gate.) The fix is applied in th
 shipped encoder; below, the corrected `z_sem` is diffuse in 2D because it spreads
 over ~72 dimensions, while `z_speed` still resolves into the O0-vs-optimized axis:
 
-![PCA, corrected loss (high-rank z_sem)](docs/figures/pca_highrank.png)
+![PCA, corrected loss (high-rank z_sem)](jepa-v2/docs/figures/pca_highrank.png)
 
 ### Reproduce
 
