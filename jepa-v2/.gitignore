@@ -1,0 +1,20 @@
+# venvs / caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# data & artifacts (never commit corpora or checkpoints)
+data/
+runs/
+*.pt
+*.ll
+*.bc
+graphs_cache/
+*.log
+
+# secrets — the RunPod private key lives OUTSIDE the repo (see ../RUNPOD_CONNECT.md)
+*_remote
+*.pem

@@ -1,0 +1,10 @@
+# OS junk
+.DS_Store
+
+# tooling / local agent state
+.serena/
+.claude/settings.local.json
+.claude/scheduled_tasks.lock
+
+# nested local agent state
+jepa-v2/.claude/

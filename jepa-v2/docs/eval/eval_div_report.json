@@ -1,0 +1,33 @@
+{
+  "z_sem_usage": {
+    "allocated_dims": 96,
+    "effective_rank": 2.97,
+    "dims_for_90pct_var": 2,
+    "dims_for_99pct_var": 2
+  },
+  "z_speed_usage": {
+    "allocated_dims": 32,
+    "effective_rank": 1.14,
+    "dims_for_90pct_var": 1,
+    "dims_for_99pct_var": 1
+  },
+  "z_sem_cos_intra_program": 1.0,
+  "z_sem_cos_inter_program": 0.227,
+  "z_sem_gap": 0.772,
+  "z_speed_cos_intra_level": 0.896,
+  "z_speed_cos_inter_level": -0.024,
+  "z_speed_gap": 0.92,
+  "explained_var_z_speed": [
+    1.0,
+    0.0
+  ],
+  "explained_var_z_sem": [
+    0.523,
+    0.476
+  ],
+  "silhouette_speed_by_level": 0.226,
+  "silhouette_sem_by_program": -0.064,
+  "silhouette_sem_by_level": -0.002,
+  "silhouette_speed_by_program": -0.94,
+  "figure": "eval_div/pca_disentangle.png"
+}

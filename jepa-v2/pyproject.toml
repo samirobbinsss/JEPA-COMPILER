@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jepa-v2"
+version = "0.1.0"
+description = "Factored self-supervised program embedding on ProgramML graphs (z = [z_sem | z_speed])"
+requires-python = ">=3.10"
+
+# NOTE on pins (hard-won — see scripts/pod.sh and the pod setup):
+# programl 0.3.2 was built against an old protoc and an old torchdata:
+#   * protobuf MUST be < 3.21   (else "Descriptors cannot be created directly")
+#   * torchdata MUST expose datapipes (<= 0.7.1; removed in newer torchdata)
+#   * needs `packaging` and a `setuptools` that still has `setuptools.extern`
+# These are pinned so the env is reproducible on the shared pod.
+dependencies = [
+    "programl==0.3.2",
+    "protobuf<3.21",
+    "torchdata==0.7.1",
+    "packaging",
+    "setuptools<81",
+    "networkx<3.0",          # programl to_networkx breaks on networkx>=3 (KeyError 'edges')
+    "torch>=2.2",
+    "torch-geometric>=2.5",
+    "numpy",
+]
+
+[project.optional-dependencies]
+# datasets<3: ExeBench ships a loader script; datasets>=3 dropped script support.
+data = ["datasets<3", "zstandard", "huggingface_hub"]   # pulling ExeBench from HF
+viz = ["matplotlib", "scikit-learn"]  # eval: t-SNE / cosine matrices
+dev = ["pytest", "ruff"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
